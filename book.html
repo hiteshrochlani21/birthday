@@ -104,6 +104,53 @@
       .front:has(img), .back:has(img) { padding: 0; }
       .front img, .back img { width: 100%; height: 100%; object-fit: cover; }
 
+      @media (max-width: 768px) {
+    .book {
+        width: 80vmin;
+        height: 80vmin;
+        transform: rotateX(5deg);
+    }
+
+    .front, .back {
+        padding: 1.5em;
+    }
+
+    .front::after, .back::after {
+        font-size: 0.8em;
+    }
+
+    /* Optional: Adjust font size for better readability on mobile */
+    .front, .back {
+        font-size: 1.1em;
+    }
+}
+
+/* For smaller screens like phones */
+@media (max-width: 480px) {
+    .book {
+        width: 90vmin;
+        height: 90vmin;
+        transform: rotateX(2deg);
+    }
+
+    .front, .back {
+        padding: 1em;
+    }
+
+    .front::after, .back::after {
+        font-size: 0.7em;
+    }
+
+    /* Adjust image sizing on very small screens */
+    .front img, .back img {
+        object-fit: contain; /* Ensures image fits properly */
+    }
+
+    .front, .back {
+        font-size: 1em;
+    }
+}
+
       .cover {
         background: linear-gradient(135deg, var(--color-heart), var(--color-text-pink));
         color: var(--color-white);
@@ -313,3 +360,4 @@
   </body>
 
 </html>
+
